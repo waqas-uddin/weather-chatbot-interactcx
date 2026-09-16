@@ -14,17 +14,20 @@ describe('formatCurrentWeather', () => {
 });
 
 describe('formatDailyForecast', () => {
-  it('joins each day into a single readable string', () => {
+  it('renders each day as its own bulleted line', () => {
     const days: DailyForecast[] = [
       { date: new Date('2026-09-13T00:00:00Z'), description: 'light rain', minTempC: 18, maxTempC: 24, humidity: 60 },
       { date: new Date('2026-09-14T00:00:00Z'), description: 'sunny', minTempC: 19, maxTempC: 27, humidity: 45 },
     ];
     const result = formatDailyForecast(days);
-    expect(result).toContain('light rain, 18-24°C');
-    expect(result).toContain('sunny, 19-27°C');
+    const lines = result.split('\n');
+
+    expect(lines).toHaveLength(2);
+    expect(lines[0]).toContain('light rain, 18–24°C');
+    expect(lines[1]).toContain('sunny, 19–27°C');
   });
 
   it('returns a fallback message for an empty forecast list', () => {
-    expect(formatDailyForecast([])).toBe('no forecast data available');
+    expect(formatDailyForecast([])).toBe('No forecast data available.');
   });
 });

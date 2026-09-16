@@ -9,12 +9,12 @@ export function formatCurrentWeather(weather: CurrentWeather): string {
 }
 
 export function formatDailyForecast(days: DailyForecast[]): string {
-  if (days.length === 0) return 'no forecast data available';
+  if (days.length === 0) return 'No forecast data available.';
 
   return days
     .map(
       (day) =>
-        `${formatHumanDate(day.date)}: ${day.description}, ${day.minTempC}-${day.maxTempC}°C`,
+        `• ${formatHumanDate(day.date)}: ${day.description}, ${day.minTempC}–${day.maxTempC}°C`,
     )
-    .join('; ');
+    .join('\n');
 }

@@ -13,5 +13,5 @@ export async function handleCurrentWeather(parameters: WeatherIntentParameters):
   const { lat, lon, resolvedName } = await geocodeCity(city);
   const weather = await getCurrentWeather(lat, lon);
 
-  return `The current weather for ${resolvedName || city} is ${formatCurrentWeather(weather)}.`;
+  return `Current weather in ${resolvedName || city}: ${formatCurrentWeather(weather)}.`;
 }
