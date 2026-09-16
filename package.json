@@ -1,0 +1,52 @@
+{
+  "name": "weather-chatbot-interactcx",
+  "version": "1.0.0",
+  "description": "Dialogflow ES fulfillment webhook for the Weather Info & Forecast Bot (current weather + 8-day forecast via OpenWeather One Call API 3.0)",
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src tests --ext .ts",
+    "lint:fix": "eslint src tests --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
+  },
+  "keywords": [
+    "dialogflow",
+    "chatbot",
+    "weather",
+    "openweather",
+    "webhook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pino": "^9.6.0",
+    "pino-http": "^10.4.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.7",
+    "@types/supertest": "^6.0.2",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^8.57.1",
+    "jest": "^29.7.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
