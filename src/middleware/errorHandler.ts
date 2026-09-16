@@ -3,7 +3,6 @@ import { isAppError } from '../utils/errors';
 import { logger } from '../utils/logger';
 import { buildTextResponse } from '../dialogflow/responseBuilder';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function errorHandler(err: unknown, req: Request, res: Response, _next: NextFunction): void {
   if (isAppError(err)) {
     logger.warn({ err: err.message, path: req.path }, 'Handled application error');
